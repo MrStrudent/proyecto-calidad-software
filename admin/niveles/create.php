@@ -47,9 +47,8 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                         <div class="form-group">
                                             <label for="">Niveles</label>
                                             <select name="nivel" id="" class="form-control">
-                                                <option value="INICIAL">INICIAL</option>
-                                                <option value="PRIMARIA">PRIMARIA</option>
                                                 <option value="SECUNDARIA">SECUNDARIA</option>
+                                                <option value="BACHILLERATO">BACHILLERATO</option>
                                             </select>
                                         </div>
                                     </div>

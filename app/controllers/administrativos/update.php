@@ -62,9 +62,9 @@ $sentencia->execute();
 ///Actualizar  a la tabla administrativos
 $sentencia = $pdo->prepare('UPDATE administrativos SET fyh_actualizacion=:fyh_actualizacion
                                    WHERE id_administrativo=:id_administrativo');
+$sentencia->bindParam(':id_administrativo', $id_administrativo);
+$sentencia->bindParam(':fyh_actualizacion', $fechaHora);
 
-$sentencia->bindParam(':fyh_actualizacion', $fyh_actualizacion);
-$sentencia->bindParam('id_administrativo', $id_administrativo);
 
 
 if($sentencia->execute()){

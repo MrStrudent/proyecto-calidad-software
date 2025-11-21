@@ -17,7 +17,7 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
             <br>
             <div class="row">
 
-                <div class="col-md-12">
+                <div class="col-md-18">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title"><b>Estudiantes registrados</b></h3>
@@ -68,8 +68,8 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_estudiantes;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_estudiantes;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                                               <!-- <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar<?=$id_estudiantes;?>(event)" method="post" id="miFormulario<?=$id_docente;?>">
-                                                    <input type="text" name="id_usuario" value="<?=$id_estudiantes;?>" hidden>
+                                               <form action="<?=APP_URL;?>/app/controllers/estudiantes/delete.php" onclick="preguntar<?=$id_estudiantes;?>(event)" method="post" id="miFormulario<?=$id_estudiantes;?>">
+                                                    <input type="text" name="id_estudiantes" value="<?=$id_estudiantes;?>" hidden>
                                                     <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
@@ -91,7 +91,7 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
                                                             }
                                                         });
                                                     }
-                                                </script> -->
+                                                </script> 
                                             </div>
                                         </td>
                                     </tr>

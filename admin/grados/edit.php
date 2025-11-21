@@ -49,20 +49,15 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         <div class="form-group">
                                             <label for="">Curso</label>
                                             <select name="curso" id="" class="form-control">
-                                                <option value="INICIAL - 1"<?=$curso=='INICIAL - 1' ? 'selected' : ''?>>INICIAL - 1</option>
-                                                <option value="INICIAL - 2"<?=$curso=='INICIAL - 2' ? 'selected' : ''?>>INICIAL - 2</option>
-                                                <option value="PRIMARIA - 1"<?=$curso=='PRIMARIA - 1' ? 'selected' : ''?>>PRIMARIA - 1</option>
-                                                <option value="PRIMARIA - 2"<?=$curso=='PRIMARIA - 2' ? 'selected' : ''?>>PRIMARIA - 2</option>
-                                                <option value="PRIMARIA - 3"<?=$curso=='PRIMARIA - 3' ? 'selected' : ''?>>PRIMARIA - 3</option>
-                                                <option value="PRIMARIA - 4"<?=$curso=='PRIMARIA - 4' ? 'selected' : ''?>>PRIMARIA - 4</option>
-                                                <option value="PRIMARIA - 5"<?=$curso=='PRIMARIA - 5' ? 'selected' : ''?>>PRIMARIA - 5</option>
-                                                <option value="PRIMARIA - 6"<?=$curso=='PRIMARIA - 6' ? 'selected' : ''?>>PRIMARIA - 6</option>
                                                 <option value="SECUNDARIA - 1"<?=$curso=='SECUNDARIA - 1' ? 'selected' : ''?>>SECUNDARIA - 1</option>
                                                 <option value="SECUNDARIA - 2"<?=$curso=='SECUNDARIA - 2' ? 'selected' : ''?>>SECUNDARIA - 2</option>
                                                 <option value="SECUNDARIA - 3"<?=$curso=='SECUNDARIA - 3' ? 'selected' : ''?>>SECUNDARIA - 3</option>
-                                                <option value="SECUNDARIA - 4"<?=$curso=='SECUNDARIA - 4' ? 'selected' : ''?>>SECUNDARIA - 4</option>
-                                                <option value="SECUNDARIA - 5"<?=$curso=='SECUNDARIA - 5' ? 'selected' : ''?>>SECUNDARIA - 5</option>
-                                                <option value="SECUNDARIA - 6"<?=$curso=='SECUNDARIA - 6' ? 'selected' : ''?>>SECUNDARIA - 6</option>
+                                                <option value="BACHILLERATO - 1"<?=$curso=='BACHILLERATO - 1' ? 'selected' : ''?>>BACHILLERATO - 1</option>
+                                                <option value="BACHILLERATO - 2"<?=$curso=='BACHILLERATO - 2' ? 'selected' : ''?>>BACHILLERATO - 2</option>
+                                                <option value="BACHILLERATO - 3"<?=$curso=='BACHILLERATO - 3' ? 'selected' : ''?>>BACHILLERATO - 3</option>
+                                                <option value="BACHILLERATO - 4"<?=$curso=='BACHILLERATO - 4' ? 'selected' : ''?>>BACHILLERATO - 4</option>
+                                                <option value="BACHILLERATO - 5"<?=$curso=='BACHILLERATO - 5' ? 'selected' : ''?>>BACHILLERATO - 5</option>
+                                                <option value="BACHILLERATO - 6"<?=$curso=='BACHILLERATO - 6' ? 'selected' : ''?>>BACHILLERATO - 6</option>
                                             </select>
                                         </div>
                                     </div>
@@ -70,7 +65,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Turnos</label>
+                                            <label for="">Grupo</label>
                                             <select name="paralelo" id="" class="form-control">
                                                 <option value="A"<?=$paralelo=='A' ? 'selected' : ''?>>A</option>
                                                 <option value="B"<?=$paralelo=='B' ? 'selected' : ''?>>B</option>

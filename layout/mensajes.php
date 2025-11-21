@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 3/1/2024
- * Time: 15:28
- */
+
 
 
 if( (isset($_SESSION['mensaje'])) && (isset($_SESSION['icono']) )){

@@ -45,20 +45,15 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         <div class="form-group">
                                             <label for="">Curso</label>
                                             <select name="curso" id="" class="form-control">
-                                                <option value="INICIAL - 1">INICIAL - 1</option>
-                                                <option value="INICIAL - 2">INICIAL - 2</option>
-                                                <option value="PRIMARIA - 1">PRIMARIA - 1</option>
-                                                <option value="PRIMARIA - 2">PRIMARIA - 2</option>
-                                                <option value="PRIMARIA - 3">PRIMARIA - 3</option>
-                                                <option value="PRIMARIA - 4">PRIMARIA - 4</option>
-                                                <option value="PRIMARIA - 5">PRIMARIA - 5</option>
-                                                <option value="PRIMARIA - 6">PRIMARIA - 6</option>
                                                 <option value="SECUNDARIA - 1">SECUNDARIA - 1</option>
                                                 <option value="SECUNDARIA - 2">SECUNDARIA - 2</option>
                                                 <option value="SECUNDARIA - 3">SECUNDARIA - 3</option>
-                                                <option value="SECUNDARIA - 4">SECUNDARIA - 4</option>
-                                                <option value="SECUNDARIA - 5">SECUNDARIA - 5</option>
-                                                <option value="SECUNDARIA - 6">SECUNDARIA - 6</option>
+                                                <option value="BACHILLERATO - 1">BACHILLERATO - 1</option>
+                                                <option value="BACHILLERATO - 2">BACHILLERATO - 2</option>
+                                                <option value="BACHILLERATO - 3">BACHILLERATO - 3</option>
+                                                <option value="BACHILLERATO - 4">BACHILLERATO - 4</option>
+                                                <option value="BACHILLERATO - 5">BACHILLERATO - 5</option>
+                                                <option value="BACHILLERATO - 6">BACHILLERATO - 6</option>
                                             </select>
                                         </div>
                                     </div>
@@ -66,7 +61,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Turnos</label>
+                                            <label for="">Grupos</label>
                                             <select name="paralelo" id="" class="form-control">
                                                 <option value="A">A</option>
                                                 <option value="B">B</option>

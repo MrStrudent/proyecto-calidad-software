@@ -64,7 +64,7 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="pago.php?id=<?=$id_estudiantes;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-credit-card"></i></a>
+                                                <a href="create.php?id=<?=$id_estudiantes;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-credit-card"></i></a>
                                                 <a href="contrato.php?id=<?=$id_estudiantes;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-printer-fill"></i></a>
                                                
                                             </div>

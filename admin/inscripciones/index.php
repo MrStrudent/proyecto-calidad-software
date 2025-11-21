@@ -2,7 +2,7 @@
 include ('../../app/config.php');
 include ('../../admin/layout/parte1.php');
 
-include ('../../app/controllers/docentes/listado_de_docentes.php');
+//include ('/../../app/controllers/docentes/listado_de_docentes.php');
 
 ?>
 
@@ -27,6 +27,18 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                         
                     </div>
                 </div>
+
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                            <span class="info-box-icon bg-success"><i class="bi bi-person-fill-add"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Importar estudiantes</span>
+                                <a href="importar" class="btn btn-success btn-sm">Importar</a>
+                            </div>
+                        
+                    </div>
+                </div>
+
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->

@@ -91,25 +91,35 @@ CREATE TABLE estudiantes (
 
   id_estudiante             INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   persona_id             INT (11) NOT NULL,
-
+  codigo                 VARCHAR (10) NOT NULL,
+  nivel_id               INT (11) NOT NULL,
+  id_grado       INT (11) NOT NULL,
   fyh_creacion   DATETIME NULL,
   fyh_actualizacion DATETIME NULL,
   estado        VARCHAR (11),
 
-  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade
+  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade,
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+  FOREIGN KEY (id_grado) REFERENCES grados (id_grado) on delete no action on update cascade
 
 )ENGINE=InnoDB;
 
 CREATE TABLE ppffs (
 
   id_ppff             INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  persona_id             INT (11) NOT NULL,
-
+  estudiante_id       INT (11) NOT NULL,
+  nombre_apellidos_ppff    VARCHAR (50) NOT NULL,
+  ci_ppff                  VARCHAR (20) NOT NULL,
+  celular_ppff             VARCHAR (20) NOT NULL,
+  ocupacion                VARCHAR (50) NOT NULL,
+  ref_nombre               VARCHAR (50) NOT NULL,
+  ref_parentezco           VARCHAR (50) NOT NULL,
+  ref_celular              VARCHAR (50) NOT NULL,
   fyh_creacion   DATETIME NULL,
   fyh_actualizacion DATETIME NULL,
   estado        VARCHAR (11),
 
-  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
 
 )ENGINE=InnoDB;
 
@@ -195,3 +205,100 @@ CREATE TABLE materias (
 )ENGINE=InnoDB;
 INSERT INTO materias (nombre_materia,fyh_creacion,estado)
 VALUES ('MATEMÁTICA','2025-12-28 20:29:10','1');
+
+CREATE TABLE pagos (
+
+  id_pago               INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  estudiante_id         INT (11) NOT NULL,
+  mes_pagado            VARCHAR (20) NOT NULL,
+  monto_pagado          VARCHAR (10) NOT NULL,
+  fecha_pagado          VARCHAR (20) NOT NULL,
+
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11),
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+
+)ENGINE=InnoDB;
+
+CREATE TABLE asignaciones(
+  id_asignacion    INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  docente_id       INT (11) NOT NULL,
+  nivel_id         INT (11) NOT NULL,
+  grado_id         INT (11) NOT NULL,
+  materia_id       INT (11) NOT NULL,
+  fyh_creacion     DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado           VARCHAR (11),
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
+  FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
+
+)ENGINE=InnoDB;
+
+CREATE TABLE calificaciones(
+  id_calificacion    INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  docente_id         INT (11) NOT NULL,
+  estudiante_id      INT (11) NOT NULL,
+  materia_id         INT (11) NOT NULL,
+  parcial1           VARCHAR (10) NOT NULL,
+  parcial2           VARCHAR (10) NOT NULL,
+  parcial3           VARCHAR (10) NOT NULL,
+  fyh_creacion     DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado           VARCHAR (11),
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+  
+
+)ENGINE=InnoDB;
+
+CREATE TABLE kardexs(
+ 
+  id_kardex          INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  docente_id         INT (11) NOT NULL,
+  estudiante_id      INT (11) NOT NULL,
+  materia_id         INT (11) NOT NULL,
+
+  fecha              VARCHAR (50) NOT NULL,
+  observacion        VARCHAR (255) NOT NULL,
+  nota               TEXT NOT NULL,
+  
+  fyh_creacion     DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado           VARCHAR (11),
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+  
+
+)ENGINE=InnoDB;
+
+CREATE TABLE permisos(
+ 
+  id_permiso          INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre_url          VARCHAR (100) NOT NULL,
+  url                 text NOT NULL,
+  
+  fyh_creacion     DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado           VARCHAR (11)
+  
+
+)ENGINE=InnoDB;
+
+CREATE TABLE roles_permisos(
+ 
+  id_rol_permiso          INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  rol_id                  INT (11) NOT NULL,
+  id_permiso              INT (11) NOT NULL,
+  
+  fyh_creacion     DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado           VARCHAR (11)
+  FOREIGN KEY (rol_id) REFERENCES roles (id_rol) on delete no action on update cascade,
+  FOREIGN KEY (id_permiso) REFERENCES permisos (id_permiso) on delete no action on update cascade
+
+)ENGINE=InnoDB;
