@@ -22,7 +22,7 @@ if (!isset($_POST['mensaje'])) {
 
 $pregunta = $_POST['mensaje'];
 
-$api_key = "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";
+$api_key = "API_KEY";
 
 $data = [
     "model" => "gpt-4o-mini",
